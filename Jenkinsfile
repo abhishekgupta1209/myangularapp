@@ -38,5 +38,6 @@ node {
     withSonarQubeEnv() {
       bat "${scannerHome}/bin/sonar-scanner"
     }
+    waitForQualityGate abortPipeline: true
   }
 }
