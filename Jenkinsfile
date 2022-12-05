@@ -41,5 +41,6 @@ node {
  def getURL = readProperties file: './.scannerwork/report-task.txt'
  sonarqubeURL = "${getURL['dashboardUrl']}"
  echo "${sonarqubeURL }"
+ echo "end of pipeline"
   }
 }
