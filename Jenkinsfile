@@ -27,9 +27,7 @@ node {
 // }
         
     }
-    stage('Deploy') {
-        echo "Deploying..."
-    }
+}
   node {
   stage('SCM') {
     checkout scm
