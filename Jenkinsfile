@@ -30,14 +30,14 @@ node {
     stage('Deploy') {
         echo "Deploying..."
     }
+  node {
   stage('SCM') {
     checkout scm
   }
   stage('SonarQube Analysis') {
     def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv() {
-      bat "${scannerHome}/bin/sonar-scanner"
+      sh "${scannerHome}/bin/sonar-scanner"
     }
-    waitForQualityGate abortPipeline: true
   }
 }
