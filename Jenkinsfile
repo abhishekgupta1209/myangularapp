@@ -35,12 +35,7 @@ node {
   stage('SonarQube Analysis') {
     def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv() {
-      bat "${scannerHome}/bin/sonar-scanner"
+      sh "${scannerHome}/bin/sonar-scanner"
     }
- waitForQualityGate abortPipeline: true
- def getURL = readProperties file: './.scannerwork/report-task.txt'
- sonarqubeURL = "${getURL['dashboardUrl']}"
- echo "${sonarqubeURL }"
- echo "end of pipeline"
   }
 }
