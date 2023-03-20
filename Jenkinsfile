@@ -43,7 +43,7 @@ node {
     echo "build sccess"
     echo "ye parallel hai :)"
     stage('sample stage'){
-    sh 'echo "hello'
+    sh 'echo "hello"'
     }
   }
    parallel(stages)
