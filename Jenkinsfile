@@ -42,6 +42,9 @@ node {
   stages['build']={
     echo "build sccess"
     echo "ye parallel hai :)"
+    stage('sample stage'){
+    sh 'echo "hello'
+    }
   }
    parallel(stages)
   }
